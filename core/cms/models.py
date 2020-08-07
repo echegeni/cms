@@ -9,7 +9,7 @@ class post (models.Model):
     date = models.DateTimeField(auto_now_add= True, verbose_name="زمان انتشار")
     thumbnail = models.ImageField(upload_to='images/', verbose_name="تصویر شاخص")
     tags = TaggableManager(verbose_name="برچسب ها")
-    user = models.OneToOneField(User, on_delete=models.CASCADE,verbose_name="نویسنده")
+    user = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name="نویسنده")
 
     class meta:
         verbose_name = "پست"
