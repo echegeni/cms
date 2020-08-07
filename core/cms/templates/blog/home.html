@@ -1,607 +1,213 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-
-    <!--================Fullwidth block Area =================-->
-
-    <section class="fullwidth-block area-padding-bottom">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-xl-5">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{% static 'img/magazine/1.jpg' %}" alt="">
+  <section class="blog_area area-padding">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 mb-5 mb-lg-0">
+                  <div class="blog_left_sidebar">
+                    {% for posts in post %}
+                      <article class="blog_item">
+                        <div class="blog_item_img">
+                          <img class="card-img rounded-0" src="{% static 'img/blog/main-blog/m-blog-1.jpg' %}" alt="">
+                          <a href="#" class="blog_item_date">
+                            <h3>15</h3>
+                            <p>Jan</p>
+                          </a>
                         </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">Tours & Travel</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Created face stars sixth forth fow
-                                Earth firmament meat</h4>
+
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="single-blog.html">
+                                <h2>{{posts.title}}</h2>
                             </a>
-                            <div class="meta-bottom d-flex" >
-                                <a href="#">March 12 , 2019 . </a>
-                                <a class="dark_font" href="#">By Alen Mark</a>
-                            </div>
+                            <p>{{posts.description}}</p>
+                            <ul class="blog-info-link">
+                              {% for tag in posts.tags.all %}<li><a href="#"><i class="far fa-user"></i>{{tag}}</a></li>{% endfor %}
+                              <li><a href="#"><i class="far fa-user"></i>{{posts.user}}</a></li>
+                              <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                            </ul>
                         </div>
-                    </div>    
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="single-blog style_two">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{% static 'img/magazine/2.jpg' %}" alt="">
-                        </div>
-                        <div class="short_details text-center ">
-
-                            <div class="meta-top d-flex justify-content-center">
-                                <a href="#">Tours & Travel</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Created face stars sixth forth fow
-                                Earth firmament meat</h4>
-                            </a>
-                            <div class="meta-bottom d-flex justify-content-center">
-                                <a href="#">March 12 , 2019 . </a>
-                                <a href="#">By Alen Mark</a>
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-
-                <div class="col-lg-12 col-xl-3">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-xl-12">
-                            <div class="single-blog style-three m_b_30">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="{% static 'img/magazine/3.jpg' %}" alt="">
+                      </article>
+                      {% endfor %}
+                      <nav class="blog-pagination justify-content-center d-flex">
+                          <ul class="pagination">
+                              <li class="page-item">
+                                  <a href="#" class="page-link" aria-label="Previous">
+                                      <i class="ti-angle-left"></i>
+                                  </a>
+                              </li>
+                              <li class="page-item">
+                                  <a href="#" class="page-link">1</a>
+                              </li>
+                              <li class="page-item active">
+                                  <a href="#" class="page-link">2</a>
+                              </li>
+                              <li class="page-item">
+                                  <a href="#" class="page-link" aria-label="Next">
+                                      <i class="ti-angle-right"></i>
+                                  </a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="blog_right_sidebar">
+                      <aside class="single_sidebar_widget search_widget">
+                          <form action="#">
+                            <div class="form-group">
+                              <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search Keyword">
+                                <div class="input-group-append">
+                                  <button class="btn" type="button"><i class="ti-search"></i></button>
                                 </div>
-                                <div class="short_details">
-
-                                    <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>The abundantly brought after day fish there image</h4>
-                                    </a>
-                                </div>
+                              </div>
                             </div>
+                            <button class="button rounded-0 primary-bg text-white w-100" type="submit">Search</button>
+                          </form>
+                      </aside>
 
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-6 col-xl-12">
-                            <div class="single-blog style-three">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="{% static 'img/magazine/4.jpg' %}" alt="">
-                                </div>
-                                <div class="short_details">
-
-                                    <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>The abundantly brought after day fish there image</h4>
-                                    </a>
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--================Fullwidth block Area end =================-->
-
-
-    <!--================ First block section start =================-->      
-
-    <section class="first_block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-xl-6">
-                    <div class="single-blog row no-gutters style-four border_one">
-                        <div class="col-12 col-sm-5">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/magazine/5.jpg' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-7">
-                            <div class="short_details">
-                                <div class="meta-top d-flex">
-                                    <a href="#">Tours & Travel</a>
-                                </div>
-                                <a class="d-block" href="single-blog.html">
-                                    <h4>Brought all day domi
-                                        nion appear from
-                                        subdue dominion
-                                    firmament over face</h4>
+                      <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Category</h4>
+                        <ul class="list cat-list">
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Resaurant food</p>
+                                    <p>(37)</p>
                                 </a>
-                                <div class="meta-bottom d-flex" >
-                                    <a href="#">March 12 , 2019 . </a>
-                                    <a class="dark_font" href="#">By Alen Mark</a>
-                                </div>
-                            </div>  
-                        </div>  
-                    </div>      
-                </div>
-
-                <div class="col-lg-4 col-xl-3">
-                    <div class="single-blog style_five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{% static 'img/magazine/6.jpg' %}" alt="">
-                        </div>
-                        <div class="short_details ">
-
-                            <div class="meta-top d-flex">
-                                <a href="#">Tours & Travel</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Abundantly forth late
-                                appear fourth us.</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-xl-3">
-                    <div class="single-blog style_five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{% static 'img/magazine/7.jpg' %}" alt="">
-                        </div>
-                        <div class="short_details ">
-
-                            <div class="meta-top d-flex">
-                                <a href="#">Tours & Travel</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Abundantly forth late
-                                appear fourth us.</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ First block section end =================-->  
-
-    <!--================ Editors Picks section start =================-->  
-
-    <section class="editors_pick area-padding">
-        <div class="container">
-            <div class="row">
-                <div class="area-heading">
-                    <h3>Editor Picks</h3>
-                    <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 col-xl-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{% static 'img/magazine/8.jpg' %}" alt="">
-                        </div>
-                        <div class="short_details pad_25 ">
-                            <div class="meta-top d-flex">
-                                <a href="#">Tours & Travel</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Created face stars sixth forth
-                                Earth firmament</h4>
-                            </a>
-                            <div class="meta-bottom d-flex" >
-                                <a href="#">March 12 , 2019 . </a>
-                                <a class="dark_font" href="#">By Alen Mark</a>
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-lg-7 col-xl-6">
-                    <div class="single-blog row no-gutters style-four m_b_30">
-                        <div class="col-12 col-sm-7">
-                            <div class="short_details padd_left_0">
-                                <div class="meta-top d-flex">
-                                    <a href="#">Tours & Travel</a>
-                                </div>
-                                <a class="d-block" href="single-blog.html">
-                                    <h4 class="font-20">Light that hath itself god
-                                        grass herb dark sea on
-                                    the hath dowe </h4>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Travel news</p>
+                                    <p>(10)</p>
                                 </a>
-                                <p>Said spirit evening above good twes at  god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
-                            </div>  
-                        </div>  
-                        <div class="col-12 col-sm-5">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/magazine/9.jpg' %}" alt="">
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="single-blog row no-gutters style-four">
-                        <div class="col-12 col-sm-5">
-                            <div class="thumb">
-                                <img class="img-fluid" src="img/magazine/10.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-7">
-                            <div class="short_details padd_right_0">
-                                <div class="meta-top d-flex">
-                                    <a href="#">Tours & Travel</a>
-                                </div>
-                                <a class="d-block" href="single-blog.html">
-                                    <h4 class="font-20">Light that hath itself god
-                                        grass herb dark sea on
-                                    the hath dowe </h4>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Modern technology</p>
+                                    <p>(03)</p>
                                 </a>
-                                <p>Said spirit evening above good twes at  god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
-                            </div>  
-                        </div>  
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="addvertise">
-                        <a href=""><img src="img/banner/add.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Product</p>
+                                    <p>(11)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Inspiration</p>
+                                    <p>21</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Health Care (21)</p>
+                                    <p>09</p>
+                                </a>
+                            </li>
+                        </ul>
+                      </aside>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--================ Editors Picks section end =================-->      
-
-
-
-    <!--================ Video section start =================-->  
-
-    <div class="video-area background_one area-padding">
-        <div class="container">
-            <div class="row">
-                <div class="area-heading">
-                    <h3>Travel News</h3>
-                    <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="single-blog video-style">
-                        <div class="thumb">
-                            <img class="img-fluid" src="img/magazine/11.jpg" alt="">
-                            <div class="play_btn">
-                                <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn"
-                                data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-                            </div>
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">shoes</a>/
-                                <a href="#">March 15, 2019</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Created face stars sixth forth fow
-                                Earth firmament meat</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-comment"></i>05 comment</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                                <a href="#"><i class="ti-eye"></i> 1k view</a>
-                            </div>
-                        </div>
-                    </div> 
-
-                </div> 
-
-                <div class="col-lg-5">
-                    <div class="single-blog video-style small row m_b_30">
-                        <div class="thumb col-12 col-sm-5">
-                            <img class="img-fluid" src="img/magazine/12.jpg" alt="">
-                            <div class="play_btn">
-                                <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn"
-                                data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-                            </div>
-                        </div>
-                        <div class="short_details col-12 col-sm-7">
-                            <div class="meta-top d-flex">
-                                <a href="#">Beauty</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Blessed night morning on
-                                them you great</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-time"></i>mar 12</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                                <a href="#"><i class="ti-eye"></i> 1k view</a>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="single-blog video-style small row m_b_30 ">
-                        <div class="thumb col-12 col-sm-5">
-                            <img class="img-fluid" src="img/magazine/13.jpg" alt="">
-                            <div class="play_btn">
-                                <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn"
-                                data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-                            </div>
-                        </div>
-                        <div class="short_details col-12 col-sm-7">
-                            <div class="meta-top d-flex">
-                                <a href="#">Beauty</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Blessed night morning on
-                                them you great</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-time"></i>mar 12</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                                <a href="#"><i class="ti-eye"></i> 1k view</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="single-blog video-style small row">
-                        <div class="thumb col-12 col-sm-5">
-                            <img class="img-fluid" src="img/magazine/14.jpg" alt="">
-                            <div class="play_btn">
-                                <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn"
-                                data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-                            </div>
-                        </div>
-                        <div class="short_details col-12 col-sm-7">
-                            <div class="meta-top d-flex">
-                                <a href="#">Beauty</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Blessed night morning on
-                                them you great</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-time"></i>mar 12</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                                <a href="#"><i class="ti-eye"></i> 1k view</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+                      <aside class="single_sidebar_widget popular_post_widget">
+                          <h3 class="widget_title">Recent Post</h3>
+                          <div class="media post_item">
+                              <img src="img/blog/popular-post/post1.jpg" alt="post">
+                              <div class="media-body">
+                                  <a href="single-blog.html">
+                                      <h3>From life was you fish...</h3>
+                                  </a>
+                                  <p>January 12, 2019</p>
+                              </div>
+                          </div>
+                          <div class="media post_item">
+                              <img src="img/blog/popular-post/post2.jpg" alt="post">                              
+                              <div class="media-body">
+                                  <a href="single-blog.html">
+                                      <h3>The Amazing Hubble</h3>
+                                  </a>
+                                  <p>02 Hours ago</p>
+                              </div>
+                          </div>
+                          <div class="media post_item">
+                              <img src="img/blog/popular-post/post3.jpg" alt="post">                              
+                              <div class="media-body">
+                                  <a href="single-blog.html">
+                                      <h3>Astronomy Or Astrology</h3>
+                                  </a>
+                                  <p>03 Hours ago</p>
+                              </div>
+                          </div>
+                          <div class="media post_item">
+                              <img src="img/blog/popular-post/post4.jpg" alt="post">
+                              <div class="media-body">
+                                  <a href="single-blog.html">
+                                      <h3>Asteroids telescope</h3>
+                                  </a>
+                                  <p>01 Hours ago</p>
+                              </div>
+                          </div>
+                      </aside>
+                      <aside class="single_sidebar_widget tag_cloud_widget">
+                          <h4 class="widget_title">برچسب ها</h4>
+                          <ul class="list">
+                               <li>
+                                  <a href="#">illustration</a>
+                              </li>
+                          </ul>
+                      </aside>
 
 
-    <!--================ Video section end =================-->  
+                      <aside class="single_sidebar_widget instagram_feeds">
+                        <h4 class="widget_title">اینستاگرام</h4>
+                        <ul class="instagram_row flex-wrap">
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i1.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i2.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i3.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i4.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i5.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img class="img-fluid" src="{% static 'img/instagram/widget-i6.png' %}" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                      </aside>
 
 
-    <!--================ three-block section start =================-->  
+                      <aside class="single_sidebar_widget newsletter_widget">
+                        <h4 class="widget_title">خبرنامه</h4>
 
-    <div class="three-block  area-padding">
-        <div class="container">
-            <div class="row">
-                <div class="area-heading">
-                    <h3>Fashion News</h3>
-                    <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-blog style-five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="img/magazine/15.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">shoes</a>/
-                                <a href="#">March 15, 2019</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Shall for rule whose toge one
-                                may heaven to dat</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-comment"></i>05 comment</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                            </div>
-                        </div>
-                    </div> 
-
-                </div> 
-
-                <div class="col-lg-4">
-                    <div class="single-blog style-five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="img/magazine/16.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">shoes</a>/
-                                <a href="#">March 15, 2019</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Shall for rule whose toge one
-                                may heaven to dat</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-comment"></i>05 comment</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                            </div>
-                        </div>
-                    </div> 
-
-                </div> 
-
-                <div class="col-lg-4">
-                    <div class="single-blog style-five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="img/magazine/17.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">shoes</a>/
-                                <a href="#">March 15, 2019</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Shall for rule whose toge one
-                                may heaven to dat</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-comment"></i>05 comment</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                            </div>
-                        </div>
-                    </div> 
-                </div> 
-            </div>
-        </div>
-    </div>
-
-
-    <!--================ three-block section end =================-->  
-
-
-
-    <!--================ Latest news section start =================-->  
-
-    <div class="latest-news  area-padding-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="area-heading">
-                    <h3>Fashion News</h3>
-                    <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="single-blog style-five">
-                        <div class="thumb">
-                            <img class="img-fluid" src="img/magazine/18.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">shoes</a>/
-                                <a href="#">March 15, 2019</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Brought dreepeth youll blessed
-                                from whose signs over</h4>
-                            </a>
-                            <div class="meta-bottom d-flex">
-                                <a href="#"><i class="ti-comment"></i>05 comment</a>
-                                <a href="#"><i class="ti-heart"></i> 0 like</a>
-                            </div>
-                        </div>
-                    </div> 
-
-                </div> 
-
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="single-blog style-five small">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="img/magazine/19.jpg" alt="">
-                                </div>
-                                <div class="short_details">
-                                    <div class="meta-top d-flex">
-                                        <a href="#">shoes</a>/
-                                        <a href="#">March 15, 2019</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>Shall for rule whoses
-                                        may heaven to</h4>
-                                    </a>
-                                    <div class="meta-bottom d-flex">
-                                        <a href="#">March 15, 2019</a>
-
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="single-blog style-five small">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="img/magazine/20.jpg" alt="">
-                                </div>
-                                <div class="short_details">
-                                    <div class="meta-top d-flex">
-                                        <a href="#">shoes</a>/
-                                        <a href="#">March 15, 2019</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>Shall for rule whoses
-                                        may heaven to</h4>
-                                    </a>
-                                    <div class="meta-bottom d-flex">
-                                        <a href="#">March 15, 2019</a>
-
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="single-blog style-five small">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="img/magazine/21.jpg" alt="">
-                                </div>
-                                <div class="short_details">
-                                    <div class="meta-top d-flex">
-                                        <a href="#">shoes</a>/
-                                        <a href="#">March 15, 2019</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>Shall for rule whoses
-                                        may heaven to</h4>
-                                    </a>
-                                    <div class="meta-bottom d-flex">
-                                        <a href="#">March 15, 2019</a>
-
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="single-blog style-five small">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="img/magazine/22.jpg" alt="">
-                                </div>
-                                <div class="short_details">
-                                    <div class="meta-top d-flex">
-                                        <a href="#">shoes</a>/
-                                        <a href="#">March 15, 2019</a>
-                                    </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>Shall for rule whoses
-                                        may heaven to</h4>
-                                    </a>
-                                    <div class="meta-bottom d-flex">
-                                        <a href="#">March 15, 2019</a>
-
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>          
-                    </div>               
-                </div> 
-
-            </div>
-        </div>
-    </div>
-
-
-    <!--================ Latest news section end =================--> 
-
-
-
+                        <form action="#">
+                          <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter email" required>
+                          </div>
+                          <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
+                        </form>
+                      </aside>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 {% endblock  %}

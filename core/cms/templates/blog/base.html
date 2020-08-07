@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/popup/magnific-popup.css' %}">
     <!-- main css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
@@ -23,7 +23,6 @@
     <!--================ Start header Top Area =================-->
     <section class="header-top">
         <div class="container">
-
             <div class="row align-items-center justify-content-between">
                 <div class="col-6 col-lg-4">
                     <div class="float-left">
@@ -38,7 +37,7 @@
                 </div>
                 <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
                     <a href="index.html" class="logo">
-                        <img src="{% static 'img/logo.png' %}" alt="">
+                        <img src="img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 search-trigger">
@@ -96,8 +95,37 @@
         </div>
     </header>
     <!-- End header MEnu Area -->
-        {% block content %}
-        {% endblock %}
+
+
+ 
+  <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
+            <div class="mb-3 mb-md-0">
+              <h2>Blog</h2>
+            </div>
+            <div class="page_link">
+              <a href="index.html">Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+
+  <!--================Blog Area =================-->
+{% block content %}
+{% endblock content %}
+  <!--================Blog Area =================-->
+
+
+
+
     <!-- ================ start footer Area ================= -->
     <footer class="footer-area">
         <div class="container">
@@ -124,50 +152,7 @@
                 <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                     <h4>Important Link</h4>
                     <ul>
-                        <li><a                                    <i class="fab fa-telegram-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div style="position: absolute; left: -5000px;">
-                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                        </div>
-
-                        <div class="info"></div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
-            <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter-alt"></i></a>
-                <a href="#"><i class="ti-dribbble"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- ================ End footer Area ================= -->
-
-
-
-
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
-<script src="{% static 'js/popper.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/stellar.js' %}"></script>
-<script src="{% static 'vendors/popup/jquery.magnific-popup.min.js' %}"></script>
-<script src="{% static 'vendors/popup/jquery.magnific-popup.min.js' %}"></script>
-<script src="{% static 'js/waypoints.min.js' %}"></script>
-<script src="js/mai href="#">WHMCS-bridge</a></li>
+                        <li><a href="#">WHMCS-bridge</a></li>
                         <li><a href="#">Search Domain</a></li>
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">Shopping Cart</a></li>
